@@ -37,16 +37,19 @@ inThisBuild(
 onLoadMessage := s"Welcome to sbt-scalafmt ${version.value}"
 skip in publish := true
 
-lazy val plugin = project
-  .enablePlugins(SbtPlugin)
-  .settings(
-    moduleName := "sbt-scalafmt",
-    libraryDependencies ++= List(
-      "org.scalameta" %% "scalafmt-dynamic" % "2.0.0-RC8"
-    ),
-    scriptedBufferLog := false,
-    scriptedLaunchOpts += s"-Dplugin.version=${version.value}"
-  )
+moduleName := "sbt-scalafmt"
+
+libraryDependencies ++= List(
+  "org.scalameta" %% "scalafmt-dynamic" % "2.0.0-RC8"
+)
+
+enablePlugins(ScriptedPlugin)
+
+sbtPlugin := true
+
+scriptedBufferLog := false
+
+scriptedLaunchOpts += s"-Dplugin.version=${version.value}"
 
 // For some reason, it doesn't work if this is defined in globalSettings in PublishPlugin.
 inScope(Global)(
