@@ -39,7 +39,7 @@ skip in publish := true
 
 moduleName := "sbt-scalafmt"
 
-dependsOn(RootProject(uri("git://github.com/mdcollab/scalafmt.git#44d7712e79e987f54fd785fd1b0b9a9954fe70fa")))
+dependsOn(ProjectRef(uri("git://github.com/mdcollab/scalafmt.git#44d7712e79e987f54fd785fd1b0b9a9954fe70fa"), "dynamic"))
 
 enablePlugins(ScriptedPlugin)
 
