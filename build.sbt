@@ -36,11 +36,9 @@ skip in publish := true
 
 lazy val plugin = project
   .enablePlugins(SbtPlugin)
+  .dependsOn(RootProject(uri("git://github.com/mdcollab/scalafmt.git#44d7712e79e987f54fd785fd1b0b9a9954fe70fa")))
   .settings(
     moduleName := "sbt-scalafmt",
-    libraryDependencies ++= List(
-      "org.scalameta" %% "scalafmt-dynamic" % "2.0.0-RC8"
-    ),
     scriptedBufferLog := false,
     scriptedLaunchOpts += s"-Dplugin.version=${version.value}"
   )
