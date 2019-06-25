@@ -25,7 +25,10 @@ inThisBuild(
         url("https://github.com/tanishiking/")
       )
     ),
-    resolvers += Resolver.sonatypeRepo("releases"),
+    resolvers ++= Seq(
+      Resolver.sonatypeRepo("releases"),
+      Resolver.bintrayIvyRepo("sbt", "sbt-plugin-releases")
+    ),
     scalaVersion := "2.12.8",
     publishArtifact in packageDoc := sys.env.contains("CI"),
     publishArtifact in packageSrc := sys.env.contains("CI")
