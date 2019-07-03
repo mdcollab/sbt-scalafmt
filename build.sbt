@@ -1,6 +1,6 @@
 inThisBuild(
   List(
-    organization := "org.scalameta",
+    organization := "com.carbonhealth",
     homepage := Some(url("https://github.com/scalameta/sbt-scalafmt")),
     licenses := Seq(
       "Apache-2.0" -> url("http://www.apache.org/licenses/LICENSE-2.0")
@@ -36,7 +36,6 @@ inThisBuild(
   )
 )
 onLoadMessage := s"Welcome to sbt-scalafmt ${version.value}"
-skip in publish := true
 
 moduleName := "sbt-scalafmt"
 
