@@ -27,6 +27,7 @@ inThisBuild(
     ),
     resolvers ++= Seq(
       Resolver.sonatypeRepo("releases"),
+      Resolver.sonatypeRepo("snapshots"),
       Resolver.bintrayIvyRepo("sbt", "sbt-plugin-releases")
     ),
     scalaVersion := "2.12.8",
@@ -39,7 +40,7 @@ skip in publish := true
 
 moduleName := "sbt-scalafmt"
 
-dependsOn(ProjectRef(uri("git://github.com/mdcollab/scalafmt.git#2074d01c4b32be2300c6f12022b9352a17350d29"), "cli"))
+libraryDependencies += "com.carbonhealth" %% "scalafmt-cli" % "2.0.0-RC8+10-2074d01c+20190702-1926-SNAPSHOT"
 
 enablePlugins(ScriptedPlugin)
 
