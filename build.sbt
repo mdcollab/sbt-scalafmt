@@ -39,7 +39,7 @@ onLoadMessage := s"Welcome to sbt-scalafmt ${version.value}"
 
 moduleName := "sbt-scalafmt"
 
-libraryDependencies += "com.carbonhealth" %% "scalafmt-cli" % "2.0.0-RC8+10-2074d01c+20190702-1926-SNAPSHOT"
+libraryDependencies += "com.carbonhealth" %% "scalafmt-cli" % "2.0.0-RC8+12-78c61c37+20190904-1459-SNAPSHOT"
 
 enablePlugins(ScriptedPlugin)
 
